@@ -1,0 +1,32 @@
+{
+    "models":[
+        {"type":"rf","params":{"n_estimators":10, "min_samples_leaf":1, "max_features":"auto"}}
+    ],
+    "time_splits":[
+        {"type":"action","action_date":"2016-04-30","train_timedelta":"730D","test_window_size":"365D"}
+    ],
+    "feature_sets":[
+        {"list":["dynamic-with-app-length"]},
+        {"list":["dynamic-without-app-length"]},
+        {"list":["app-length"]}
+    ],
+    "data_subsets":[
+        {"type":"month_thresh","cutoff":4},
+        {"type":"month_thresh","cutoff":6},    
+        {"type":"month_thresh","cutoff":12},
+        {"type":"ltu_prop_weight","cutoff":1.5}
+    ],
+    "cutoffs":[
+        {"type":"number", "value":50},
+        {"type":"number", "value":100},
+        {"type":"number", "value":1000},
+        {"type":"number", "value":2000}
+    ],
+    "labels":[
+        {"ltu_length":12}
+    ],
+    "historical":[
+        {"limit":"730D"}
+    ]
+}
+

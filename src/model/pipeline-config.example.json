@@ -1,0 +1,25 @@
+{
+    "models":[
+        {"type":"lg"}
+    ],
+    "time_splits":[
+        {"type":"date","action_date":"2016-04-30","train_timedelta":"730D","test_window_size":"365D"},
+	{"type":"date","action_date":"2016-04-30","train_timedelta":"730D","test_window_size":"365D"},
+        {"type":"date","action_date":"2015-04-01","train_timedelta":"730D","test_window_size":"365D"}
+    ],
+    "feature_sets":[
+        {"list":["historical","demographics","dynamic"]}
+    ],
+    "cutoffs":[
+        {"type":"number", "value":50},
+        {"type":"number", "value":100},
+        {"type":"number", "value":1000}
+    ],
+    "labels":[
+        {"ltu_length":12}
+    ],
+    "historical":[
+        {"limit":"730D"}
+    ]    
+}
+
